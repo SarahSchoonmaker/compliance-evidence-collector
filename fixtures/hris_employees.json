@@ -1,0 +1,59 @@
+{
+  "system": "Synthetic HRIS (stands in for Workday / BambooHR)",
+  "records": [
+    {
+      "employee_id": "E100",
+      "username": "alice",
+      "status": "active",
+      "termination_at": null
+    },
+    {
+      "employee_id": "E101",
+      "username": "bob",
+      "status": "active",
+      "termination_at": null
+    },
+    {
+      "employee_id": "E102",
+      "username": "carol",
+      "status": "active",
+      "termination_at": null
+    },
+    {
+      "employee_id": "E103",
+      "username": "dave",
+      "status": "terminated",
+      "termination_at": "2026-06-10T17:00:00Z"
+    },
+    {
+      "employee_id": "E104",
+      "username": "erin",
+      "status": "terminated",
+      "termination_at": "2026-08-20T17:00:00Z"
+    },
+    {
+      "employee_id": "E105",
+      "username": "frank",
+      "status": "terminated",
+      "termination_at": "2026-05-15T17:00:00Z"
+    },
+    {
+      "employee_id": "E106",
+      "username": "grace",
+      "status": "active",
+      "termination_at": null
+    },
+    {
+      "employee_id": "E107",
+      "username": "heidi",
+      "status": "active",
+      "termination_at": null
+    },
+    {
+      "employee_id": "E108",
+      "username": "ivan",
+      "status": "terminated",
+      "termination_at": "2026-01-31T17:00:00Z"
+    }
+  ]
+}

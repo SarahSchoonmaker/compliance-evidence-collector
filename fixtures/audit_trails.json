@@ -1,0 +1,17 @@
+{
+  "system": "Synthetic AWS account (stands in for CloudTrail)",
+  "records": [
+    {
+      "name": "org-trail",
+      "is_multi_region": true,
+      "is_logging": true,
+      "log_file_validation": true
+    },
+    {
+      "name": "dev-trail",
+      "is_multi_region": false,
+      "is_logging": false,
+      "log_file_validation": false
+    }
+  ]
+}

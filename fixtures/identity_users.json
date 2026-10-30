@@ -1,0 +1,75 @@
+{
+  "system": "Synthetic identity provider (stands in for AWS IAM / Okta)",
+  "records": [
+    {
+      "username": "alice",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "bob",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "carol",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "dave",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "disabled",
+      "disabled_at": "2026-06-11T09:30:00Z"
+    },
+    {
+      "username": "erin",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "frank",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "disabled",
+      "disabled_at": "2026-05-16T08:00:00Z"
+    },
+    {
+      "username": "grace",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "heidi",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "active",
+      "disabled_at": null
+    },
+    {
+      "username": "ivan",
+      "console_access": true,
+      "mfa_enabled": true,
+      "status": "disabled",
+      "disabled_at": "2026-02-01T12:00:00Z"
+    },
+    {
+      "username": "svc-deploy",
+      "console_access": false,
+      "mfa_enabled": false,
+      "status": "active",
+      "disabled_at": null
+    }
+  ]
+}

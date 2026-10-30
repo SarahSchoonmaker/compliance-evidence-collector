@@ -1,0 +1,30 @@
+{
+  "system": "Synthetic AWS account (stands in for S3)",
+  "records": [
+    {
+      "name": "acme-prod-orders",
+      "encryption": "aws:kms",
+      "public_access_block": true
+    },
+    {
+      "name": "acme-prod-logs",
+      "encryption": "aws:kms",
+      "public_access_block": true
+    },
+    {
+      "name": "acme-analytics-lake",
+      "encryption": "AES256",
+      "public_access_block": true
+    },
+    {
+      "name": "acme-legacy-exports",
+      "encryption": null,
+      "public_access_block": true
+    },
+    {
+      "name": "acme-marketing-assets",
+      "encryption": "AES256",
+      "public_access_block": true
+    }
+  ]
+}

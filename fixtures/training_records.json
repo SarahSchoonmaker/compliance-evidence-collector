@@ -1,0 +1,35 @@
+{
+  "system": "Synthetic LMS",
+  "records": [
+    {
+      "username": "alice",
+      "course": "Security Awareness 2026",
+      "completed_at": "2026-03-01"
+    },
+    {
+      "username": "bob",
+      "course": "Security Awareness 2026",
+      "completed_at": "2026-02-11"
+    },
+    {
+      "username": "carol",
+      "course": "Security Awareness 2026",
+      "completed_at": "2026-05-10"
+    },
+    {
+      "username": "grace",
+      "course": "Security Awareness 2026",
+      "completed_at": "2026-02-14"
+    },
+    {
+      "username": "heidi",
+      "course": "Security Awareness 2026",
+      "completed_at": "2026-04-22"
+    },
+    {
+      "username": "erin",
+      "course": "Security Awareness 2025",
+      "completed_at": "2025-06-30"
+    }
+  ]
+}

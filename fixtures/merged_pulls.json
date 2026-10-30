@@ -1,0 +1,192 @@
+{
+  "system": "Synthetic GitHub organization",
+  "records": [
+    {
+      "repo": "acme/payments-api",
+      "number": 200,
+      "author": "alice",
+      "merged_at": "2026-04-02T15:00:00Z",
+      "approvals": [
+        "carol"
+      ],
+      "merged_by": "alice"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 201,
+      "author": "bob",
+      "merged_at": "2026-04-09T15:00:00Z",
+      "approvals": [
+        "grace"
+      ],
+      "merged_by": "bob"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 202,
+      "author": "carol",
+      "merged_at": "2026-04-16T15:00:00Z",
+      "approvals": [
+        "heidi"
+      ],
+      "merged_by": "carol"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 203,
+      "author": "grace",
+      "merged_at": "2026-05-23T15:00:00Z",
+      "approvals": [
+        "alice"
+      ],
+      "merged_by": "grace"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 204,
+      "author": "heidi",
+      "merged_at": "2026-05-04T15:00:00Z",
+      "approvals": [
+        "bob"
+      ],
+      "merged_by": "heidi"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 205,
+      "author": "alice",
+      "merged_at": "2026-05-11T15:00:00Z",
+      "approvals": [
+        "carol"
+      ],
+      "merged_by": "alice"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 206,
+      "author": "bob",
+      "merged_at": "2026-06-18T15:00:00Z",
+      "approvals": [
+        "grace"
+      ],
+      "merged_by": "bob"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 207,
+      "author": "carol",
+      "merged_at": "2026-06-25T15:00:00Z",
+      "approvals": [
+        "heidi"
+      ],
+      "merged_by": "carol"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 208,
+      "author": "grace",
+      "merged_at": "2026-06-06T15:00:00Z",
+      "approvals": [
+        "alice"
+      ],
+      "merged_by": "grace"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 209,
+      "author": "heidi",
+      "merged_at": "2026-07-13T15:00:00Z",
+      "approvals": [
+        "bob"
+      ],
+      "merged_by": "heidi"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 210,
+      "author": "alice",
+      "merged_at": "2026-07-20T15:00:00Z",
+      "approvals": [
+        "carol"
+      ],
+      "merged_by": "alice"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 211,
+      "author": "bob",
+      "merged_at": "2026-07-27T15:00:00Z",
+      "approvals": [],
+      "merged_by": "bob",
+      "title_hint": "hotfix"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 212,
+      "author": "carol",
+      "merged_at": "2026-08-08T15:00:00Z",
+      "approvals": [
+        "heidi"
+      ],
+      "merged_by": "carol"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 213,
+      "author": "grace",
+      "merged_at": "2026-08-15T15:00:00Z",
+      "approvals": [
+        "alice"
+      ],
+      "merged_by": "grace"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 214,
+      "author": "heidi",
+      "merged_at": "2026-08-22T15:00:00Z",
+      "approvals": [
+        "bob"
+      ],
+      "merged_by": "heidi"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 215,
+      "author": "alice",
+      "merged_at": "2026-09-03T15:00:00Z",
+      "approvals": [
+        "carol"
+      ],
+      "merged_by": "alice"
+    },
+    {
+      "repo": "acme/web-frontend",
+      "number": 216,
+      "author": "bob",
+      "merged_at": "2026-09-10T15:00:00Z",
+      "approvals": [
+        "grace"
+      ],
+      "merged_by": "bob"
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "number": 217,
+      "author": "carol",
+      "merged_at": "2026-09-17T15:00:00Z",
+      "approvals": [
+        "heidi"
+      ],
+      "merged_by": "carol"
+    },
+    {
+      "repo": "acme/payments-api",
+      "number": 150,
+      "author": "bob",
+      "merged_at": "2026-03-20T10:00:00Z",
+      "approvals": [],
+      "merged_by": "bob"
+    }
+  ]
+}

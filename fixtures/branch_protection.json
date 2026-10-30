@@ -1,0 +1,26 @@
+{
+  "system": "Synthetic GitHub organization",
+  "records": [
+    {
+      "repo": "acme/payments-api",
+      "branch": "main",
+      "required_approving_review_count": 1,
+      "enforce_admins": true,
+      "dismiss_stale_reviews": true
+    },
+    {
+      "repo": "acme/web-frontend",
+      "branch": "main",
+      "required_approving_review_count": 2,
+      "enforce_admins": true,
+      "dismiss_stale_reviews": true
+    },
+    {
+      "repo": "acme/data-pipeline",
+      "branch": "main",
+      "required_approving_review_count": 1,
+      "enforce_admins": true,
+      "dismiss_stale_reviews": false
+    }
+  ]
+}

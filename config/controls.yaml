@@ -1,0 +1,141 @@
+# Unified control framework.
+# Each control is defined once, mapped to every framework it satisfies,
+# tested once, and its evidence reused across SOC 2 and ISO audits.
+
+audit_period:
+  start: 2026-04-01   # SOC 2 Type II observation window
+  end: 2026-09-30
+
+controls:
+  - id: AC-01
+    name: MFA enforced for all console users
+    owner: IT Security
+    frequency: continuous
+    test: mfa_enforced
+    source: Identity provider / AWS IAM
+    mappings:
+      soc2: [CC6.1]
+      iso27001: [A.5.17, A.8.5]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: AC-02
+    name: Terminated users' access removed within 24 hours
+    owner: IT Operations
+    frequency: per_event
+    test: terminated_access_removed
+    source: HRIS terminations vs identity accounts
+    mappings:
+      soc2: [CC6.2, CC6.3]
+      iso27001: [A.5.18, A.6.5]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: AC-03
+    name: Quarterly user access review completed and signed off
+    owner: IT Security
+    frequency: quarterly
+    test: access_review_completed
+    source: Access review records
+    mappings:
+      soc2: [CC6.2, CC6.3]
+      iso27001: [A.5.18]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: CM-01
+    name: Production branches protected with required review
+    owner: Engineering
+    frequency: continuous
+    test: branch_protection
+    source: GitHub branch protection
+    mappings:
+      soc2: [CC8.1]
+      iso27001: [A.8.32, A.8.4]
+      iso9001: ["8.5.6"]
+    servicenow_control_sys_id: ""
+
+  - id: CM-02
+    name: Every production change independently approved before merge
+    owner: Engineering
+    frequency: per_event
+    test: pr_independent_approval
+    source: GitHub merged pull requests
+    mappings:
+      soc2: [CC8.1]
+      iso27001: [A.8.32]
+      iso9001: ["8.5.6"]
+    servicenow_control_sys_id: ""
+
+  - id: DP-01
+    name: Data stores encrypted at rest
+    owner: Cloud Engineering
+    frequency: continuous
+    test: storage_encrypted
+    source: AWS S3
+    mappings:
+      soc2: [CC6.1, CC6.7]
+      iso27001: [A.8.24]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: DP-02
+    name: No publicly accessible storage
+    owner: Cloud Engineering
+    frequency: continuous
+    test: no_public_storage
+    source: AWS S3 public access block
+    mappings:
+      soc2: [CC6.1, CC6.6]
+      iso27001: [A.8.3, A.8.20]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: LM-01
+    name: Audit logging enabled across all regions
+    owner: Security Operations
+    frequency: continuous
+    test: audit_logging
+    source: AWS CloudTrail
+    mappings:
+      soc2: [CC7.2]
+      iso27001: [A.8.15, A.8.16]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: VM-01
+    name: Critical and high vulnerabilities remediated within SLA
+    owner: Security Operations
+    frequency: per_event
+    test: vulnerability_sla
+    source: Vulnerability scanner findings
+    sla_days: {critical: 7, high: 30}
+    mappings:
+      soc2: [CC7.1]
+      iso27001: [A.8.8]
+      iso9001: []
+    servicenow_control_sys_id: ""
+
+  - id: HR-01
+    name: Annual security awareness training completed
+    owner: People / HR
+    frequency: annual
+    test: training_completion
+    source: Learning management system
+    mappings:
+      soc2: [CC1.4, CC2.2]
+      iso27001: [A.6.3]
+      iso9001: ["7.2", "7.3"]
+    servicenow_control_sys_id: ""
+
+  - id: QM-01
+    name: Nonconformities have root cause and corrective action closed by due date
+    owner: GRC
+    frequency: per_event
+    test: corrective_actions
+    source: Corrective action (CAPA) register
+    mappings:
+      soc2: [CC4.2]
+      iso27001: ["10.2"]
+      iso9001: ["10.2"]
+    servicenow_control_sys_id: ""

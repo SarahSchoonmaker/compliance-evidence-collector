@@ -1,0 +1,37 @@
+{
+  "system": "Synthetic corrective action register",
+  "records": [
+    {
+      "id": "CAPA-021",
+      "source": "Internal audit finding",
+      "due_date": "2026-05-31",
+      "closed_at": "2026-05-28",
+      "root_cause": "Access review reminders were manual",
+      "status": "closed"
+    },
+    {
+      "id": "CAPA-022",
+      "source": "SOC 2 exception (prior period)",
+      "due_date": "2026-07-15",
+      "closed_at": "2026-07-10",
+      "root_cause": "HR termination feed not connected to IdP",
+      "status": "closed"
+    },
+    {
+      "id": "CAPA-023",
+      "source": "Customer complaint",
+      "due_date": "2026-09-01",
+      "closed_at": "2026-08-29",
+      "root_cause": "Release checklist missing rollback step",
+      "status": "closed"
+    },
+    {
+      "id": "CAPA-024",
+      "source": "Management review",
+      "due_date": "2026-12-15",
+      "closed_at": null,
+      "root_cause": "Under analysis",
+      "status": "open"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+name: Control evidence collection
+
+on:
+  # Type II evidence must show controls operated across the whole period,
+  # so collection runs on a schedule rather than once before the audit.
+  schedule:
+    - cron: "23 6 * * 1" # weekly, Monday morning UTC
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Evidence source"
+        type: choice
+        options: [fixture, live]
+        default: fixture
+      servicenow:
+        description: "ServiceNow GRC push"
+        type: choice
+        options: ["off", dry-run, live]
+        default: dry-run
+
+permissions:
+  contents: read
+  id-token: write # only for the AWS OIDC role in live mode
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: pytest -q
+
+  collect:
+    needs: test # never produce audit evidence with code that failed its tests
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      SOURCE: ${{ inputs.source || 'fixture' }}
+      SERVICENOW: ${{ inputs.servicenow || 'dry-run' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Configure read-only AWS credentials (live mode)
+        if: env.SOURCE == 'live'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_EVIDENCE_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
+
+      - name: Collect evidence
+        env:
+          GITHUB_TOKEN: ${{ secrets.EVIDENCE_GITHUB_TOKEN }}
+          GITHUB_REPOS: ${{ vars.GITHUB_REPOS }}
+          SN_INSTANCE_URL: ${{ vars.SN_INSTANCE_URL }}
+          SN_CONTROL_MAP: ${{ vars.SN_CONTROL_MAP }}
+          SN_USER: ${{ secrets.SN_USER }}
+          SN_PASSWORD: ${{ secrets.SN_PASSWORD }}
+        run: python -m evidence_collector --source "$SOURCE" --servicenow "$SERVICENOW" --out evidence
+
+      - name: Verify package integrity
+        run: python -m evidence_collector --verify "$(ls -d evidence/*/ | head -1)"
+
+      - name: Publish report
+        if: always()
+        run: cat evidence/*/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      # In production, write packages to write-once storage (e.g. S3 Object Lock)
+      # for the full audit retention period. A build artifact is fine for a demo.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: control-evidence-${{ github.run_id }}
+          path: evidence/
+          retention-days: 90

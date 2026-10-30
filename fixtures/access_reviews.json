@@ -1,0 +1,32 @@
+{
+  "system": "Synthetic access review tracker",
+  "records": [
+    {
+      "review_id": "UAR-2026-Q1",
+      "quarter": "2026-Q1",
+      "status": "completed",
+      "completed_at": "2026-04-09",
+      "signed_off_by": "CISO",
+      "accounts_reviewed": 41,
+      "access_revoked": 3
+    },
+    {
+      "review_id": "UAR-2026-Q2",
+      "quarter": "2026-Q2",
+      "status": "completed",
+      "completed_at": "2026-07-08",
+      "signed_off_by": "CISO",
+      "accounts_reviewed": 43,
+      "access_revoked": 2
+    },
+    {
+      "review_id": "UAR-2026-Q3",
+      "quarter": "2026-Q3",
+      "status": "completed",
+      "completed_at": "2026-10-09",
+      "signed_off_by": "CISO",
+      "accounts_reviewed": 44,
+      "access_revoked": 1
+    }
+  ]
+}
